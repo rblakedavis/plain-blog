@@ -1,7 +1,9 @@
 Changes from plain-blog: 
 
 1: Responsive menu for mobile screens.
+
 2: lists .Site.RegularPages rather than .Site.Pages.
+
 3: ??? 
 
 
