@@ -1,8 +1,26 @@
+<footer class="footer">
 <div class="pure-g" id="foot">
-  <div class="pure-u-1">
+  <div class="pure-u-1" id="footer">
+      
+      
+        
+        
+                
+                
+    <ul class="menu">
+            
     {{ range .Site.Menus.bottom }}
-      <a href="{{ .URL }}">{{ .Name }}</a>
+      <li><a href="{{ .URL }}">{{ .Name }}</a></li>
     {{ end }}
+    </ul>
+    
+
+    
+    <ul class ="socials">
+            {{ range .Site.Menus.bottom }}
+        <li><a href="{{ .URL }}"><i class= "{{ .Identifier }}"></i></a></li>
+            {{ end }}
+    </ul>
     
       {{ if .Site.Params.footer.show_last_modified_time }}
         <p>Last modified <time datetime="{{- .Lastmod.Format "2006-01-02T15:04:05Z07:00" -}}" class="post-list timeago">{{- .Lastmod.Format "2006-01-02" -}}</time></p>
@@ -14,7 +32,14 @@
     {{ end }}
   </div>
 </div>
+</footer>
+
+<script src="https://kit.fontawesome.com/d55652e53b.js" crossorigin="anonymous"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/2.0.4/timeago.min.js" integrity="sha256-34otvl+f6DWlliQUlAwT5hvizEJc8lPlNpW9T23pfGA=" crossorigin="anonymous"></script>
+
+
+
 <script type="text/javascript">
   new timeago().render(document.querySelectorAll('.timeago'));
 </script>
@@ -28,6 +53,7 @@
   ga('create', '{{ .Site.Author.gaid }}', 'auto');
   ga('send', 'pageview');
 </script>
+
 {{ end }}
 </body>
 </html>

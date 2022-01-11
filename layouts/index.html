@@ -6,6 +6,7 @@
   	  <header>
   	    <h1>{{ if .Draft }}DRAFT:{{ end }}{{ .Title }}</h1>
   	  </header>
+      <hr>
 
   	  {{ if .Description }}
   	     <p id="description">{{ .Description }}</p>
@@ -14,10 +15,11 @@
   	  {{ if .Content }}
         {{ .Content }}
       {{ end }}
+      
 
-      <h1>List of all pages</h1>
-      {{ range $name, $page := .Site.Pages }}
-        {{ if ne .Type "page" }}
+      <h1>Recent posts</h1>
+      {{ range $name, $page := first 10 .Site.RegularPages }}
+        {{ if eq .Type "post" }}
           <article>
           <a href="{{ $page.Permalink }}">{{ $page.Title }}</a>
           {{ if $page.Draft }} (DRAFT) {{ end }}
@@ -25,6 +27,7 @@
               <time datetime="{{ $page.Date.Format "2006-01-02T15:04:05Z07:00" }}" class="post-list timeago">{{ $page.Date.Format "2006-01-02" }}</time>
               {{ partial "list_taxonomies.html" . }}
             <div>
+            <br>
           </article>
         {{ end }}
       {{ end }}
