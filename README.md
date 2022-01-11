@@ -15,8 +15,10 @@ Small
   2: adds :focus selector to actionable elements. 
 
   3: uses nav tag for navigation controls 
+  
+  4: primary and secondary colors. Use var(--primary),(--plight),(--pdark),(--secondary),(--slight),(--sdark)
 
-  4: ??? 
+  5: ??? 
 
 
 # plain-blog
