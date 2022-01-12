@@ -17,6 +17,8 @@ Small
   3: uses nav tag for navigation controls 
   
   4: primary and secondary colors. Use var(--primary),(--plight),(--pdark),(--secondary),(--slight),(--sdark)
+  
+    4a: want to make these colors more accessible for color-blind users
 
   5: ??? 
 
